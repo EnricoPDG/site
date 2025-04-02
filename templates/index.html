@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrico - Software Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>EnricoPDG</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        <header class="header fade-in">
             <nav class="main-nav">
                 <div class="nav-links">
-                    <a href="/" class="nav-link" data-en="Home" data-pt="Início">Home</a>
                     <a href="#about" class="nav-link" data-en="About" data-pt="Sobre">About</a>
+                    <a href="#experience" class="nav-link" data-en="Experience" data-pt="Experiência">Experience</a>
+                    <a href="#skills" class="nav-link" data-en="Skills" data-pt="Habilidades">Skills</a>
                     <a href="#projects" class="nav-link" data-en="Projects" data-pt="Projetos">Projects</a>
+                    <a href="#certificates" class="nav-link" data-en="Certificates" data-pt="Certificados">Certificates</a>
                     <a href="#contact" class="nav-link" data-en="Contact" data-pt="Contato">Contact</a>
                 </div>
                 <div class="nav-right">
-                    <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
-                        <span class="lang-text">EN</span>
+                    <button class="lang-toggle" onclick="toggleLanguage()">
+                        <span class="lang-text" data-en="EN" data-pt="PT">EN</span>
                     </button>
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <button class="theme-toggle" onclick="toggleTheme()">
                         <i class="fas fa-moon"></i>
                     </button>
                     <div class="nav-social">
@@ -35,31 +37,36 @@
                     </div>
                 </div>
             </nav>
-            <div class="hero">
+            <div class="hero fade-in">
                 <h1>Enrico Papsch Di Giacomo</h1>
                 <p class="subtitle" data-en="Software/Security Engineer" data-pt="Engenheiro de Software/Segurança">Software/Security Engineer</p>
             </div>
         </header>
 
         <main class="main-content">
-            <section id="about" class="section">
-                <h2 data-en="About Me" data-pt="Sobre Mim">About Me</h2>
+            <section id="about" class="section about-me slide-in-left delay-2">
+                <h2 data-en="About me" data-pt="Sobre mim">About me</h2>
                 <div class="content">
-                    <p data-en="I'm an software/security engineer professional with a strong focus on development, security, and cloud technologies. Proficient in AWS, HashiCorp Vault, Python, Bash, Go, and Terraform with hands-on expertise in microservices architectures and Infrastructure as Code. I thrive in dynamic environments where innovation and efficiency intersect, always aiming to deliver solutions that align with best practices in security and cloud engineering." 
-                       data-pt="Sou um engenheiro de software/segurança com forte foco em desenvolvimento, segurança e tecnologias em nuvem. Proficiente em AWS, HashiCorp Vault, Python, Bash, Go e Terraform com experiência prática em arquiteturas de microsserviços e Infraestrutura como Código. Prospero em ambientes dinâmicos onde inovação e eficiência se encontram, sempre visando entregar soluções que se alinham com as melhores práticas em segurança e engenharia em nuvem.">
+                    <p data-en="I'm an software/security engineer professional with a strong focus on development, security, and cloud technologies. Proficient in AWS, HashiCorp Vault, Python, Bash, Go, Terraform and Docker with hands-on expertise in microservices architectures and Infrastructure as Code. I thrive in dynamic environments where innovation and efficiency intersect, always aiming to deliver solutions that align with best practices in security and cloud engineering." 
+                       data-pt="Sou um engenheiro de software/segurança com forte foco em desenvolvimento, segurança e tecnologias em nuvem. Proficiente em AWS, HashiCorp Vault, Python, Bash, Go, Terraform e Docker com experiência prática em arquiteturas de microsserviços e Infraestrutura como Código. Prospero em ambientes dinâmicos onde inovação e eficiência se encontram, sempre visando entregar soluções que se alinham com as melhores práticas em segurança e engenharia em nuvem.">
                         I'm an experienced IT engineer professional with a strong focus on development, security, and cloud technologies. Proficient in AWS, HashiCorp Vault, Python, Bash, Go, and Terraform with hands-on expertise in microservices architectures and Infrastructure as Code. I thrive in dynamic environments where innovation and efficiency intersect, always aiming to deliver solutions that align with best practices in security and cloud engineering.
                     </p>
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section experience slide-in-right delay-2" id="experience">
                 <h2 data-en="Experience" data-pt="Experiência">Experience</h2>
                 <div class="experience-grid">
-                    <div class="experience-card">
+                    <div class="experience-card fade-in delay-3">
                         <div class="experience-header">
                             <h3 data-en="Security Engineer" data-pt="Engenheiro de Segurança">Security Engineer</h3>
-                            <div class="company">Itaú Unibanco</div>
-                            <div class="experience-meta">2023 - Present</div>
+                            <span class="company" data-en="Itaú Unibanco" data-pt="Itaú Unibanco">Itaú Unibanco</span>
+                            <div class="experience-meta">
+                                <span class="lang-en">São Paulo, Brazil</span>
+                                <span class="lang-pt">São Paulo, Brasil</span>
+                                <span class="lang-en">Sep 2023 - Present</span>
+                                <span class="lang-pt">Set 2023 - Presente</span>
+                            </div>
                         </div>
                         <div class="content">
                             <p data-en="Security engineer activities focused on daily automation and security implementation. Experienced in developing around using Python, Go and Bash for infrastructure and process automation. Skilled in cloud services(AWS), microservices architectures and Terraform delivering secure and efficient solutions." 
@@ -68,41 +75,47 @@
                             </p>
                         </div>
                         <ul class="experience-list">
-                            <li data-en="Implemented new secret engines and authentication methods in HashiCorp Vault, enhancing both user flexibility and institutional security." 
+                            <li class="experience-item" data-en="Implemented new secret engines and authentication methods in HashiCorp Vault, enhancing both user flexibility and institutional security." 
                                 data-pt="Implementei novos mecanismos de segredos e métodos de autenticação no HashiCorp Vault, melhorando a flexibilidade do usuário e a segurança institucional.">
                                 Implemented new secret engines and authentication methods in HashiCorp Vault, enhancing both user flexibility and institutional security.
                             </li>
-                            <li data-en="Automated processes within the squad that involve HashiCorp Vault support, leveraging AWS Lambda and AWS API Gateway, while following best programming practices using Python and Terraform." 
+                            <li class="experience-item" data-en="Automated processes within the squad that involve HashiCorp Vault support, leveraging AWS Lambda and AWS API Gateway, while following best programming practices using Python and Terraform." 
                                 data-pt="Automatizei processos dentro do squad que envolvem suporte ao HashiCorp Vault, utilizando AWS Lambda e AWS API Gateway, seguindo as melhores práticas de programação usando Python e Terraform.">
                                 Automated processes within the squad that involve HashiCorp Vault support, leveraging AWS Lambda and AWS API Gateway, while following best programming practices using Python and Terraform.
                             </li>
-                            <li data-en="Developed and architected data pipelines using AWS Glue, PySpark, EventBridge, and Step Functions, applying the data mesh concept to streamline ETL processes and democratize data access. This infrastructure supported both HashiCorp Vault and CyberArk environments. Additionally, designed and implemented AWS QuickSight dashboards, providing comprehensive KPI insights and monitoring capabilities, using Terraform as IaC tool." 
+                            <li class="experience-item" data-en="Developed and architected data pipelines using AWS Glue, PySpark, EventBridge, and Step Functions, applying the data mesh concept to streamline ETL processes and democratize data access. This infrastructure supported both HashiCorp Vault and CyberArk environments. Additionally, designed and implemented AWS QuickSight dashboards, providing comprehensive KPI insights and monitoring capabilities, using Terraform as IaC tool." 
                                 data-pt="Desenvolvi e arquitetei pipelines de dados usando AWS Glue, PySpark, EventBridge e Step Functions, aplicando o conceito de data mesh para otimizar processos ETL e democratizar o acesso aos dados. Esta infraestrutura suportou ambientes tanto do HashiCorp Vault quanto do CyberArk. Adicionalmente, projetei e implementei dashboards AWS QuickSight, fornecendo insights abrangentes de KPIs e capacidades de monitoramento, usando Terraform como ferramenta de IaC.">
                                 Developed and architected data pipelines using AWS Glue, PySpark, EventBridge, and Step Functions, applying the data mesh concept to streamline ETL processes and democratize data access. This infrastructure supported both HashiCorp Vault and CyberArk environments. Additionally, designed and implemented AWS QuickSight dashboards, providing comprehensive KPI insights and monitoring capabilities, using Terraform as IaC tool.
                             </li>
-                            <li data-en="Developed an automated onboarding process for all RDS instances within the organization, implementing role-based dynamic privilege segregation. This microservices architecture utilized AWS Lambda to retrieve RDS data from the catalog and registered instances via SQS queues, using Terraform as IaC tool." 
+                            <li class="experience-item" data-en="Developed an automated onboarding process for all RDS instances within the organization, implementing role-based dynamic privilege segregation. This microservices architecture utilized AWS Lambda to retrieve RDS data from the catalog and registered instances via SQS queues, using Terraform as IaC tool." 
                                 data-pt="Desenvolvi um processo automatizado de integração para todas as instâncias RDS dentro da organização, implementando segregação dinâmica de privilégios baseada em funções. Esta arquitetura de microsserviços utilizou AWS Lambda para recuperar dados RDS do catálogo e registrar instâncias via filas SQS, usando Terraform como ferramenta de IaC.">
                                 Developed an automated onboarding process for all RDS instances within the organization, implementing role-based dynamic privilege segregation. This microservices architecture utilized AWS Lambda to retrieve RDS data from the catalog and registered instances via SQS queues, using Terraform as IaC tool.
                             </li>
-                            <li data-en="Currently developing Terraform modules for developers to integrate with HashiCorp Vault, following predefined guidelines." 
+                            <li class="experience-item" data-en="Currently developing Terraform modules for developers to integrate with HashiCorp Vault, following predefined guidelines." 
                                 data-pt="Atualmente desenvolvendo módulos Terraform para desenvolvedores integrarem com o HashiCorp Vault, seguindo diretrizes predefinidas.">
                                 Currently developing Terraform modules for developers to integrate with HashiCorp Vault, following predefined guidelines.
                             </li>
-                            <li data-en="Led proof of concept (PoC) activities related to HashiCorp Vault." 
+                            <li class="experience-item" data-en="Led proof of concept (PoC) activities related to HashiCorp Vault." 
                                 data-pt="Liderou atividades de prova de conceito (PoC) relacionadas ao HashiCorp Vault.">
                                 Led proof of concept (PoC) activities related to HashiCorp Vault.
                             </li>
-                            <li data-en="Conducted troubleshooting and system maintenance around HashiCorp Vault." 
+                            <li class="experience-item" data-en="Conducted troubleshooting and system maintenance around HashiCorp Vault." 
                                 data-pt="Realizou resolução de problemas e manutenção de sistemas relacionados ao HashiCorp Vault.">
                                 Conducted troubleshooting and system maintenance around HashiCorp Vault.
                             </li>
                         </ul>
+                        <button class="show-more-btn" data-en-show="Show More" data-en-less="Show Less" data-pt-show="Mostrar Mais" data-pt-less="Mostrar Menos">Show More</button>
                     </div>
-                    <div class="experience-card">
+                    <div class="experience-card fade-in delay-4">
                         <div class="experience-header">
                             <h3 data-en="Security Engineer Intern" data-pt="Estagiário de Engenheiro de Segurança">Security Engineer Intern</h3>
-                            <div class="company">Itaú Unibanco</div>
-                            <div class="experience-meta">2022 - 2023</div>
+                            <span class="company" data-en="Itaú Unibanco" data-pt="Itaú Unibanco">Itaú Unibanco</span>
+                            <div class="experience-meta">
+                                <span class="lang-en">São Paulo, Brazil</span>
+                                <span class="lang-pt">São Paulo, Brasil</span>
+                                <span class="lang-en">Jun 2022 - Sep 2023</span>
+                                <span class="lang-pt">Jun 2022 - Set 2023</span>
+                            </div>
                         </div>
                         <div class="content">
                             <p data-en="Security engineer intern focused on developing and implementing security solutions using modern technologies and best practices." 
@@ -128,112 +141,144 @@
                 </div>
             </section>
 
-            <section id="skills" class="section">
+            <section id="skills" class="section skills slide-in-left delay-2">
                 <h2 data-en="Technical Skills" data-pt="Habilidades Técnicas">Technical Skills</h2>
                 <div class="content">
                     <div class="skills-grid">
-                        <div class="skill-category">
+                        <div class="skill-category fade-in delay-3">
                             <h3 data-en="Cloud & Infrastructure" data-pt="Nuvem & Infraestrutura">Cloud & Infrastructure</h3>
                             <ul class="skill-list">
-                                <li>AWS</li>
-                                <li>Terraform</li>
-                                <li>Docker</li>
+                                <li><a href="https://aws.amazon.com" target="_blank" class="skill-link aws"><i class="fab fa-aws"></i> AWS</a></li>
+                                <li><a href="https://www.terraform.io" target="_blank" class="skill-link terraform"><img src="/static/images/HashiCorp Terraform.png" alt="Terraform" class="skill-icon"> Terraform</a></li>
+                                <li><a href="https://www.docker.com" target="_blank" class="skill-link docker"><i class="fab fa-docker"></i> Docker</a></li>
+                                <li><a href="https://www.linux.org" target="_blank" class="skill-link linux"><i class="fab fa-linux"></i> Linux</a></li>
                             </ul>
                         </div>
-                        <div class="skill-category">
+                        <div class="skill-category fade-in delay-4">
                             <h3 data-en="Security" data-pt="Segurança">Security</h3>
                             <ul class="skill-list">
-                                <li>HashiCorp Vault</li>
-                                <li>Security Automation</li>
+                                <li><a href="https://www.hashicorp.com/products/vault" target="_blank" class="skill-link vault"><img src="/static/images/HashiCorp Vault.svg" alt="Vault" class="skill-icon"> HashiCorp Vault</a></li>
+                                <li><a href="https://aws.amazon.com/iam/" target="_blank" class="skill-link iam"><i class="fas fa-user-shield"></i> IAM</a></li>
                             </ul>
                         </div>
-                        <div class="skill-category">
+                        <div class="skill-category fade-in delay-5">
                             <h3 data-en="Programming" data-pt="Programação">Programming</h3>
                             <ul class="skill-list">
-                                <li>Go</li>
-                                <li>Python</li>
-                                <li>Bash</li>
+                                <li><a href="https://golang.org" target="_blank" class="skill-link go"><i class="fa-brands fa-golang"></i> Go</a></li>
+                                <li><a href="https://www.python.org" target="_blank" class="skill-link python"><i class="fab fa-python"></i> Python</a></li>
+                                <li><a href="https://www.gnu.org/software/bash/" target="_blank" class="skill-link bash"><img src="/static/images/Bash.svg" alt="Bash" class="skill-icon"> Bash</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="contact" class="section">
+            <section id="projects" class="section projects slide-in-left delay-2">
+                <h2 data-en="Projects" data-pt="Projetos">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card fade-in delay-3">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <img src="/static/images/HashiCorp Terraform.png" alt="Terraform" class="skill-icon">
+                            </div>
+                            <h3>Terraform Associate Exam Study Guide</h3>
+                        </div>
+                        <div class="project-content">
+                            <p data-en="A comprehensive study guide for the HashiCorp Certified: Terraform Associate exam. This repository contains detailed notes, key concepts, and best practices to help you prepare for the certification." 
+                               data-pt="Um guia de estudo abrangente para o exame HashiCorp Certified: Terraform Associate. Este repositório contém notas detalhadas, conceitos-chave e melhores práticas para ajudar você a se preparar para a certificação.">
+                                A comprehensive study guide for the HashiCorp Certified: Terraform Associate exam. This repository contains detailed notes, key concepts, and best practices to help you prepare for the certification.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/EnricoPDG/terraform-associate-exam" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    <span data-en="View on GitHub" data-pt="Ver no GitHub">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certificates" class="section certificates slide-in-right delay-2">
+                <h2 data-en="Certificates" data-pt="Certificações">Certificates</h2>
+                <div class="certificates-grid">
+                    <div class="certificate-card fade-in delay-3">
+                        <div class="certificate-header">
+                            <div class="cert-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <h3>AWS Certified Cloud Practitioner</h3>
+                        </div>
+                        <div class="certificate-content">
+                            <p data-en="Fundamental understanding of AWS Cloud concepts, services, and security." 
+                               data-pt="Compreensão fundamental dos conceitos, serviços e segurança da AWS Cloud.">
+                                Fundamental understanding of AWS Cloud concepts, services, and security.
+                            </p>
+                            <a href="https://www.credly.com/earner/earned/badge/5356b9b6-9466-4f71-8069-77d0eb9c84d0" target="_blank" class="certificate-link">
+                                <span data-en="View Certificate" data-pt="Ver Certificado">View Certificate</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card fade-in delay-4">
+                        <div class="certificate-header">
+                            <div class="cert-icon">
+                                <img src="/static/images/HashiCorp Terraform.png" alt="Terraform" class="skill-icon">
+                            </div>
+                            <h3>Terraform Associate</h3>
+                        </div>
+                        <div class="certificate-content">
+                            <p data-en="Proficiency in using Terraform for infrastructure as code and cloud resource management." 
+                               data-pt="Proficiência no uso do Terraform para infraestrutura como código e gerenciamento de recursos em nuvem.">
+                                Proficiency in using Terraform for infrastructure as code and cloud resource management.
+                            </p>
+                            <a href="https://www.credly.com/earner/earned/badge/c93bd87e-a180-42d1-bc7d-97390ec7d7dd" target="_blank" class="certificate-link">
+                                <span data-en="View Certificate" data-pt="Ver Certificado">View Certificate</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section contact slide-in-left delay-2">
                 <h2 data-en="Get in Touch" data-pt="Entre em Contato">Get in Touch</h2>
                 <div class="content">
-                    <div class="contact-info">
-                        <p data-en="I'm always interested in hearing about new projects and opportunities." 
-                           data-pt="Sempre estou interessado em conhecer novos projetos e oportunidades.">
-                            I'm always interested in hearing about new projects and opportunities.
-                        </p>
-                        <div class="contact-links">
-                            <a href="mailto:ricopapsch@hotmail.com" class="contact-link">
-                                <i class="fas fa-envelope"></i>
-                                <span data-en="Email" data-pt="Email">Email</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/enrico-papsch-di-giacomo/" target="_blank" class="contact-link">
-                                <i class="fab fa-linkedin"></i>
-                                <span data-en="LinkedIn" data-pt="LinkedIn">LinkedIn</span>
-                            </a>
+                    <div class="contact-container fade-in delay-3">
+                        <div class="contact-info">
+                            <p data-en="I'm always interested in hearing about new projects and opportunities." 
+                               data-pt="Sempre estou interessado em conhecer novos projetos e oportunidades.">
+                                I'm always interested in hearing about new projects and opportunities.
+                            </p>
+                            <div class="contact-links">
+                                <a href="mailto:ricopapsch@hotmail.com" class="contact-link fade-in delay-4">
+                                    <i class="fas fa-envelope"></i>
+                                    <span data-en="Email" data-pt="Email">Email</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/enrico-papsch-di-giacomo/" target="_blank" class="contact-link fade-in delay-5">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span data-en="LinkedIn" data-pt="LinkedIn">LinkedIn</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="footer">
-            <p>&copy; 2024 Enrico Papsch Di Giacomo. <span data-en="All rights reserved." data-pt="Todos os direitos reservados.">All rights reserved.</span></p>
+        <footer class="footer fade-in delay-5">
+            <p data-en="© 2025 Enrico Papsch Di Giacomo. All rights reserved." data-pt="© 2024 Enrico Papsch Di Giacomo. Todos os direitos reservados.">© 2024 Enrico Papsch Di Giacomo. All rights reserved.</p>
         </footer>
     </div>
-
-    <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = themeToggle.querySelector('i');
-
-        // Check for saved theme preference or default to light
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
-
-        function updateThemeIcon(theme) {
-            themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-        }
-
-        // Language toggle functionality
-        const langToggle = document.getElementById('lang-toggle');
-        const langText = langToggle.querySelector('.lang-text');
-
-        // Check for saved language preference or default to English
-        const savedLang = localStorage.getItem('language') || 'en';
-        document.documentElement.setAttribute('lang', savedLang);
-        updateLanguage(savedLang);
-
-        langToggle.addEventListener('click', () => {
-            const currentLang = document.documentElement.getAttribute('lang');
-            const newLang = currentLang === 'en' ? 'pt' : 'en';
-            
-            document.documentElement.setAttribute('lang', newLang);
-            localStorage.setItem('language', newLang);
-            updateLanguage(newLang);
-        });
-
-        function updateLanguage(lang) {
-            langText.textContent = lang.toUpperCase();
-            document.querySelectorAll('[data-en]').forEach(element => {
-                element.textContent = element.getAttribute(`data-${lang}`);
-            });
-        }
-    </script>
+    <script src="/static/js/main.js"></script>
 </body>
 </html> 
