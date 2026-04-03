@@ -21,6 +21,8 @@
     --background-color-rgb: 255, 255, 255;
     --section-background-rgb: 250, 250, 250;
     --border-color-rgb: 234, 234, 234;
+    --bg-light: #fafafa;
+    --bg-dark: #111111;
 }
 
 /* Page Load Animation */
@@ -89,6 +91,8 @@
     --background-color-rgb: 17, 17, 17;
     --section-background-rgb: 26, 26, 26;
     --border-color-rgb: 51, 51, 51;
+    --bg-light: #1a1a1a;
+    --bg-dark: #111111;
 }
 
 * {
@@ -173,18 +177,10 @@ h2 {
 }
 
 /* Dark theme adjustments */
-[data-theme="dark"] body::before {
+body[data-theme="dark"]::before {
     background-image: 
         linear-gradient(90deg, rgba(var(--primary-color-rgb), 0.05) 1px, transparent 1px),
         linear-gradient(0deg, rgba(var(--primary-color-rgb), 0.05) 1px, transparent 1px);
-}
-
-[data-theme="dark"] .terminal-line::before,
-[data-theme="dark"] h2::before,
-[data-theme="dark"] .skill-category h3::before,
-[data-theme="dark"] .experience-card::before,
-[data-theme="dark"] .contact-link::before {
-    color: var(--accent-color);
 }
 
 .container {
@@ -353,7 +349,7 @@ h1 {
 }
 
 /* Projects */
-.project-grid {
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: calc(var(--spacing) * 1.5);
@@ -422,6 +418,10 @@ h1 {
     object-fit: contain;
 }
 
+.project-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
 .project-header h3 {
     font-family: var(--heading-font);
     font-size: 1.2rem;
@@ -1236,15 +1236,6 @@ h1 {
         line-height: 1.6;
     }
 
-    .contact-container {
-        padding: 1.5rem 0;
-    }
-
-    .contact-info p {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-    }
-
     .contact-links {
         flex-direction: column;
         align-items: center;
@@ -1259,7 +1250,7 @@ h1 {
         font-size: 0.95rem;
     }
 
-    .project-grid {
+    .projects-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing);
     }
@@ -1341,10 +1332,6 @@ h1 {
     .certificate-link {
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
-    }
-
-    .company-link {
-        font-size: 0.95rem;
     }
 
     .nav-link {
@@ -1627,6 +1614,11 @@ h1 {
     color: #FF0000;
 }
 
+.skill-link.kubernetes {
+    border-color: #326CE5;
+    color: #326CE5;
+}
+
 /* Hover Effects */
 .skill-link:hover {
     transform: translateY(-2px);
@@ -1679,6 +1671,11 @@ h1 {
 
 .skill-link.linux:hover {
     background-color: #FF0000;
+    color: white;
+}
+
+.skill-link.kubernetes:hover {
+    background-color: #326CE5;
     color: white;
 }
 

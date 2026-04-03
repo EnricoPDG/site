@@ -2,7 +2,6 @@
 const themeToggle = document.querySelector('.theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 
-// Check for saved theme preference or default to light
 const savedTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
@@ -24,7 +23,6 @@ function updateThemeIcon(theme) {
 const langToggle = document.querySelector('.lang-toggle');
 const langText = langToggle.querySelector('.lang-text');
 
-// Check for saved language preference or default to English
 const savedLang = localStorage.getItem('language') || 'en';
 document.documentElement.setAttribute('lang', savedLang);
 updateLanguage(savedLang);
@@ -39,10 +37,8 @@ langToggle.addEventListener('click', () => {
 });
 
 function updateLanguage(lang) {
-    // Update language text in toggle button
     langText.textContent = lang.toUpperCase();
     
-    // Update all elements with data-en and data-pt attributes
     document.querySelectorAll('[data-en]').forEach(element => {
         const text = element.getAttribute(`data-${lang}`);
         if (text) {
@@ -50,9 +46,14 @@ function updateLanguage(lang) {
         }
     });
 
-    // Update experience meta spans
     document.querySelectorAll('.experience-meta .lang-en, .experience-meta .lang-pt').forEach(element => {
         element.style.display = element.classList.contains(`lang-${lang}`) ? 'block' : 'none';
+    });
+
+    document.querySelectorAll('.show-more-btn').forEach(button => {
+        const isExpanded = button.classList.contains('expanded');
+        const key = isExpanded ? 'less' : 'show';
+        button.textContent = button.getAttribute(`data-${lang}-${key}`);
     });
 }
 
@@ -65,11 +66,10 @@ document.querySelectorAll('.show-more-btn').forEach(button => {
         experienceList.classList.toggle('expanded');
         button.classList.toggle('expanded');
         
-        // Update button text based on current language
         const currentLang = document.documentElement.getAttribute('lang');
         const buttonText = isExpanded ? 
             button.getAttribute(`data-${currentLang}-show`) : 
             button.getAttribute(`data-${currentLang}-less`);
         button.textContent = buttonText;
     });
-}); 
+});
