@@ -32,7 +32,10 @@ document.querySelector('.career-age').textContent = `${Math.floor(months / 12)}y
 // Comando digitado uma vez no carregamento
 const term = document.querySelector('.term');
 const typed = term.querySelector('.term-typed');
-const cmd = typed.dataset.text;
+// Usa a versão curta do comando se a completa não couber no bloco
+typed.textContent = typed.dataset.text;
+const cmd = term.scrollWidth > term.clientWidth ? 'kubectl get pod enrico' : typed.dataset.text;
+typed.textContent = '';
 if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
     typed.textContent = cmd;
     term.classList.add('is-done');

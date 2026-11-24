@@ -107,7 +107,9 @@ h1 {
     background: var(--term-bg); color: var(--term-ink);
     font: 0.85rem/1.7 var(--mono);
     border-radius: 10px; padding: 1rem 1.25rem;
+    container-type: inline-size;
     overflow-x: auto;
+    scrollbar-width: none;
     margin-bottom: 2rem;
 }
 .term-cmd { white-space: nowrap; }
@@ -120,6 +122,20 @@ h1 {
 .term.is-typing .term-out { visibility: hidden; }
 .term.is-done .term-caret { display: none; }
 @keyframes blink { 50% { opacity: 0; } }
+.term::-webkit-scrollbar { display: none; }
+.role-short { display: none; }
+/* A tabela se adapta à largura do bloco em vez de rolar */
+@container (max-width: 34rem) {
+    .term-out th:nth-child(2), .term-out td:nth-child(2) { display: none; }
+}
+@container (max-width: 28rem) {
+    .role-long { display: none; }
+    .role-short { display: inline; }
+    .term-out th, .term-out td { padding-right: 1rem; }
+}
+@container (max-width: 20rem) {
+    .term-out th:nth-child(1), .term-out td:nth-child(1) { display: none; }
+}
 
 .socials { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 .socials a { color: var(--ink); text-decoration: none; font-weight: 500; }
@@ -193,8 +209,6 @@ p { margin: 0 0 1rem; }
     .nav { gap: 0.9rem; }
     .nav a { font-size: 0.875rem; }
     .stack div { grid-template-columns: 1fr; gap: 0; }
-    .term-out th:nth-child(2), .term-out td:nth-child(2) { display: none; }
-    .term-out th, .term-out td { padding-right: 1.1rem; }
     .hero { padding-top: 2rem; }
 }
 @media (max-width: 400px) {
