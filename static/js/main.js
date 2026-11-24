@@ -1,75 +1,64 @@
-// Theme toggle functionality
-const themeToggle = document.querySelector('.theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
+const root = document.documentElement;
+const store = {
+    get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+};
 
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
+// Tema
+const themeBtn = document.querySelector('.theme-toggle');
+const themeIcon = themeBtn.querySelector('i');
+const isDark = () =>
+    root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+const syncThemeIcon = () => { themeIcon.className = isDark() ? 'fas fa-sun' : 'fas fa-moon'; };
+syncThemeIcon();
+themeBtn.addEventListener('click', () => {
+    root.dataset.theme = isDark() ? 'light' : 'dark';
+    store.set('theme', root.dataset.theme);
+    syncThemeIcon();
 });
 
-function updateThemeIcon(theme) {
-    themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-}
-
-// Language toggle functionality
-const langToggle = document.querySelector('.lang-toggle');
-const langText = langToggle.querySelector('.lang-text');
-
-const savedLang = localStorage.getItem('language') || 'en';
-document.documentElement.setAttribute('lang', savedLang);
-updateLanguage(savedLang);
-
-langToggle.addEventListener('click', () => {
-    const currentLang = document.documentElement.getAttribute('lang');
-    const newLang = currentLang === 'en' ? 'pt' : 'en';
-    
-    document.documentElement.setAttribute('lang', newLang);
-    localStorage.setItem('language', newLang);
-    updateLanguage(newLang);
+// Idioma
+document.querySelector('.lang-toggle').addEventListener('click', () => {
+    root.lang = root.lang === 'pt' ? 'en' : 'pt';
+    store.set('language', root.lang);
 });
 
-function updateLanguage(lang) {
-    langText.textContent = lang.toUpperCase();
-    
-    document.querySelectorAll('[data-en]').forEach(element => {
-        const text = element.getAttribute(`data-${lang}`);
-        if (text) {
-            element.textContent = text;
-        }
-    });
+// Idade da carreira (desde jun/2022), no formato do kubectl: 4y5m
+const start = new Date(2022, 5, 1);
+const now = new Date();
+const months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+document.querySelector('.career-age').textContent = `${Math.floor(months / 12)}y${months % 12}m`;
 
-    document.querySelectorAll('.experience-meta .lang-en, .experience-meta .lang-pt').forEach(element => {
-        element.style.display = element.classList.contains(`lang-${lang}`) ? 'block' : 'none';
-    });
-
-    document.querySelectorAll('.show-more-btn').forEach(button => {
-        const isExpanded = button.classList.contains('expanded');
-        const key = isExpanded ? 'less' : 'show';
-        button.textContent = button.getAttribute(`data-${lang}-${key}`);
-    });
+// Comando digitado uma vez no carregamento
+const term = document.querySelector('.term');
+const typed = term.querySelector('.term-typed');
+const cmd = typed.dataset.text;
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    typed.textContent = cmd;
+    term.classList.add('is-done');
+} else {
+    term.classList.add('is-typing');
+    let i = 0;
+    const tick = () => {
+        typed.textContent = cmd.slice(0, ++i);
+        if (i < cmd.length) setTimeout(tick, 28 + Math.random() * 40);
+        else setTimeout(() => term.classList.replace('is-typing', 'is-done'), 250);
+    };
+    setTimeout(tick, 400);
 }
 
-// Show more button functionality
-document.querySelectorAll('.show-more-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const experienceList = button.previousElementSibling;
-        const isExpanded = experienceList.classList.contains('expanded');
-        
-        experienceList.classList.toggle('expanded');
-        button.classList.toggle('expanded');
-        
-        const currentLang = document.documentElement.getAttribute('lang');
-        const buttonText = isExpanded ? 
-            button.getAttribute(`data-${currentLang}-show`) : 
-            button.getAttribute(`data-${currentLang}-less`);
-        button.textContent = buttonText;
-    });
+// Estrelas, forks e linguagem direto da API do GitHub
+document.querySelectorAll('.project[data-repo]').forEach(async (el) => {
+    try {
+        const res = await fetch(`https://api.github.com/repos/${el.dataset.repo}`);
+        if (!res.ok) return;
+        const r = await res.json();
+        const stats = el.querySelector('.repo-stats');
+        const parts = [];
+        if (r.language) parts.push(`<span><i class="fas fa-code" aria-hidden="true"></i>${r.language}</span>`);
+        parts.push(`<span><i class="far fa-star" aria-hidden="true"></i>${r.stargazers_count}</span>`);
+        parts.push(`<span><i class="fas fa-code-branch" aria-hidden="true"></i>${r.forks_count}</span>`);
+        stats.innerHTML = parts.join('');
+        stats.hidden = false;
+    } catch {}
 });

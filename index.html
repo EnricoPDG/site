@@ -1,800 +1,243 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>EnricoPDG</title>
-        <link rel="stylesheet" href="/static/css/style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <div class="container">
-            <header class="header fade-in">
-                <nav class="main-nav">
-                    <div class="nav-links">
-                        <a
-                            href="#about"
-                            class="nav-link"
-                            data-en="About"
-                            data-pt="Sobre"
-                            >About</a
-                        >
-                        <a
-                            href="#experience"
-                            class="nav-link"
-                            data-en="Experience"
-                            data-pt="Experiência"
-                            >Experience</a
-                        >
-                        <a
-                            href="#skills"
-                            class="nav-link"
-                            data-en="Skills"
-                            data-pt="Habilidades"
-                            >Skills</a
-                        >
-                        <a
-                            href="#projects"
-                            class="nav-link"
-                            data-en="Projects"
-                            data-pt="Projetos"
-                            >Projects</a
-                        >
-                        <a
-                            href="#certificates"
-                            class="nav-link"
-                            data-en="Certificates"
-                            data-pt="Certificados"
-                            >Certificates</a
-                        >
-                        <a
-                            href="#contact"
-                            class="nav-link"
-                            data-en="Contact"
-                            data-pt="Contato"
-                            >Contact</a
-                        >
-                    </div>
-                    <div class="nav-right">
-                        <button class="lang-toggle">
-                            <span class="lang-text" data-en="EN" data-pt="PT"
-                                >EN</span
-                            >
-                        </button>
-                        <button class="theme-toggle">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <div class="nav-social">
-                            <a
-                                href="https://github.com/EnricoPDG"
-                                target="_blank"
-                                class="social-icon"
-                            >
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/enrico-papsch-di-giacomo/"
-                                target="_blank"
-                                class="social-icon"
-                            >
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-                <div class="hero fade-in">
-                    <h1>Enrico Papsch Di Giacomo</h1>
-                    <p
-                        class="subtitle"
-                        data-en="Software Engineer"
-                        data-pt="Engenheiro de Software"
-                    >
-                        Software Engineer
-                    </p>
-                </div>
-            </header>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enrico Papsch Di Giacomo</title>
+    <meta name="description" content="Enrico Papsch Di Giacomo — engenheiro de software em São Paulo. Go, Kubernetes, Terraform, HashiCorp Vault e AWS." />
+    <script>
+        // Aplica tema e idioma antes do paint para evitar flash
+        (function () {
+            var d = document.documentElement, t, l;
+            try { t = localStorage.getItem('theme'); l = localStorage.getItem('language'); } catch (e) {}
+            if (t) d.setAttribute('data-theme', t);
+            d.lang = l || ((navigator.language || 'pt').toLowerCase().startsWith('pt') ? 'pt' : 'en');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+    <a class="skip" href="#main"><span data-lang="pt">Pular para o conteúdo</span><span data-lang="en">Skip to content</span></a>
 
-            <main class="main-content">
-                <section
-                    id="about"
-                    class="section about-me slide-in-left delay-2"
-                >
-                    <h2 data-en="About me" data-pt="Sobre mim">About me</h2>
-                    <div class="content">
-                        <p
-                            data-en="I'm a software engineer professional with a strong focus on development, security, and cloud technologies. Proficient in AWS, HashiCorp Vault, Python, Bash, Go, Terraform and Docker with hands-on expertise in microservices architectures and Infrastructure as Code. I thrive in dynamic environments where innovation and efficiency intersect, always aiming to deliver solutions that align with best practices in security and cloud engineering."
-                            data-pt="Sou um engenheiro de software com forte foco em desenvolvimento, segurança e tecnologias em nuvem. Proficiente em AWS, HashiCorp Vault, Python, Bash, Go, Terraform e Docker com experiência prática em arquiteturas de microsserviços e Infraestrutura como Código. Prospero em ambientes dinâmicos onde inovação e eficiência se encontram, sempre visando entregar soluções que se alinham com as melhores práticas em segurança e engenharia em nuvem."
-                        >
-                            I'm a software engineer professional with a strong
-                            focus on development, security, and cloud
-                            technologies. Proficient in AWS, HashiCorp Vault,
-                            Python, Bash, Go, Terraform and Docker with
-                            hands-on expertise in microservices architectures
-                            and Infrastructure as Code. I thrive in dynamic
-                            environments where innovation and efficiency
-                            intersect, always aiming to deliver solutions that
-                            align with best practices in security and cloud
-                            engineering.
-                        </p>
-                    </div>
-                </section>
-
-                <section
-                    class="section experience slide-in-right delay-2"
-                    id="experience"
-                >
-                    <h2 data-en="Experience" data-pt="Experiência">
-                        Experience
-                    </h2>
-                    <div class="experience-grid">
-                        <div class="experience-card fade-in delay-3">
-                            <div class="experience-header">
-                                <h3
-                                    data-en="Software Engineer"
-                                    data-pt="Engenheiro de Software"
-                                >
-                                    Software Engineer
-                                </h3>
-                                <span
-                                    class="company"
-                                    data-en="AsapTech"
-                                    data-pt="AsapTech"
-                                    >AsapTech</span
-                                >
-                                <div class="experience-meta">
-                                    <span class="lang-en"
-                                        >Barueri, São Paulo, Brazil · Remote</span
-                                    >
-                                    <span class="lang-pt"
-                                        >Barueri, São Paulo, Brasil · Remoto</span
-                                    >
-                                    <span class="lang-en"
-                                        >Jun 2025 - Present</span
-                                    >
-                                    <span class="lang-pt"
-                                        >Jun 2025 - Presente</span
-                                    >
-                                </div>
-                            </div>
-                            <div class="content">
-                                <p
-                                    data-en="At AsapTech, a fintech startup focused on building scalable payment solutions, I joined the core engineering team to help design and implement the foundations of a new financial platform."
-                                    data-pt="Na AsapTech, uma startup de fintech focada em construir soluções de pagamento escaláveis, integrei a equipe principal de engenharia para ajudar a projetar e implementar as bases de uma nova plataforma financeira."
-                                >
-                                    At AsapTech, a fintech startup focused on
-                                    building scalable payment solutions, I joined
-                                    the core engineering team to help design and
-                                    implement the foundations of a new financial
-                                    platform.
-                                </p>
-                            </div>
-                            <ul class="experience-list">
-                                <li
-                                    class="experience-item"
-                                    data-en="Working on the architecture and development of backend services using Go, RabbitMQ, and Kubernetes, contributing to the creation of a high-performance, event-driven system capable of handling large-scale financial transactions."
-                                    data-pt="Trabalhando na arquitetura e desenvolvimento de serviços backend usando Go, RabbitMQ e Kubernetes, contribuindo para a criação de um sistema orientado a eventos de alta performance capaz de processar transações financeiras em grande escala."
-                                >
-                                    Working on the architecture and development
-                                    of backend services using Go, RabbitMQ, and
-                                    Kubernetes, contributing to the creation of a
-                                    high-performance, event-driven system capable
-                                    of handling large-scale financial
-                                    transactions.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="As one of the early engineers on the team, I collaborate closely with product and business stakeholders to align technical decisions with strategic goals, laying the groundwork for future scalability, compliance, and innovation in the acquirer ecosystem."
-                                    data-pt="Como um dos primeiros engenheiros da equipe, colaboro de perto com stakeholders de produto e negócios para alinhar decisões técnicas com objetivos estratégicos, estabelecendo as bases para escalabilidade, conformidade e inovação no ecossistema adquirente."
-                                >
-                                    As one of the early engineers on the team,
-                                    I collaborate closely with product and
-                                    business stakeholders to align technical
-                                    decisions with strategic goals, laying the
-                                    groundwork for future scalability,
-                                    compliance, and innovation in the acquirer
-                                    ecosystem.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="experience-card fade-in delay-4">
-                            <div class="experience-header">
-                                <h3
-                                    data-en="Software Engineer"
-                                    data-pt="Engenheiro de Software"
-                                >
-                                    Software Engineer
-                                </h3>
-                                <span
-                                    class="company"
-                                    data-en="Itaú Unibanco"
-                                    data-pt="Itaú Unibanco"
-                                    >Itaú Unibanco</span
-                                >
-                                <div class="experience-meta">
-                                    <span class="lang-en"
-                                        >São Paulo, Brazil</span
-                                    >
-                                    <span class="lang-pt"
-                                        >São Paulo, Brasil</span
-                                    >
-                                    <span class="lang-en"
-                                        >Sep 2023 - Jun 2025</span
-                                    >
-                                    <span class="lang-pt"
-                                        >Set 2023 - Jun 2025</span
-                                    >
-                                </div>
-                            </div>
-                            <div class="content">
-                                <p
-                                    data-en="Software engineer activities focused on daily automation and security implementation. Experienced in developing around using Python, Go and Bash for infrastructure and process automation. Skilled in cloud services(AWS), microservices architectures and Terraform delivering secure and efficient solutions."
-                                    data-pt="Atividades de Engenheiro de Software focadas em automação diária e implementação de segurança. Experiência em desenvolvimento utilizando Python, Go e Bash para automação de infraestrutura e processos. Habilidades em serviços em nuvem (AWS), arquiteturas de microsserviços e Terraform para entregar soluções seguras e eficientes."
-                                >
-                                    Software engineer activities focused on
-                                    daily automation and security
-                                    implementation. Experienced in developing
-                                    around using Python, Go and Bash for
-                                    infrastructure and process automation.
-                                    Skilled in cloud services(AWS),
-                                    microservices architectures and Terraform
-                                    delivering secure and efficient solutions.
-                                </p>
-                            </div>
-                            <ul class="experience-list">
-                                <li
-                                    class="experience-item"
-                                    data-en="Implemented new secret engines and authentication methods in HashiCorp Vault, enhancing both user flexibility and institutional security."
-                                    data-pt="Implementei novos mecanismos de segredos e métodos de autenticação no HashiCorp Vault, melhorando a flexibilidade do usuário e a segurança institucional."
-                                >
-                                    Implemented new secret engines and
-                                    authentication methods in HashiCorp Vault,
-                                    enhancing both user flexibility and
-                                    institutional security.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="Automated processes within the squad that involve HashiCorp Vault support, leveraging AWS Lambda and AWS API Gateway, while following best programming practices using Python and Terraform."
-                                    data-pt="Automatizei processos dentro do squad que envolvem suporte ao HashiCorp Vault, utilizando AWS Lambda e AWS API Gateway, seguindo as melhores práticas de programação usando Python e Terraform."
-                                >
-                                    Automated processes within the squad that
-                                    involve HashiCorp Vault support, leveraging
-                                    AWS Lambda and AWS API Gateway, while
-                                    following best programming practices using
-                                    Python and Terraform.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="Developed and architected data pipelines using AWS Glue, PySpark, EventBridge, and Step Functions, applying the data mesh concept to streamline ETL processes and democratize data access. This infrastructure supported both HashiCorp Vault and CyberArk environments. Additionally, designed and implemented AWS QuickSight dashboards, providing comprehensive KPI insights and monitoring capabilities, using Terraform as IaC tool."
-                                    data-pt="Desenvolvi e arquitetei pipelines de dados usando AWS Glue, PySpark, EventBridge e Step Functions, aplicando o conceito de data mesh para otimizar processos ETL e democratizar o acesso aos dados. Esta infraestrutura suportou ambientes tanto do HashiCorp Vault quanto do CyberArk. Adicionalmente, projetei e implementei dashboards AWS QuickSight, fornecendo insights abrangentes de KPIs e capacidades de monitoramento, usando Terraform como ferramenta de IaC."
-                                >
-                                    Developed and architected data pipelines
-                                    using AWS Glue, PySpark, EventBridge, and
-                                    Step Functions, applying the data mesh
-                                    concept to streamline ETL processes and
-                                    democratize data access. This infrastructure
-                                    supported both HashiCorp Vault and CyberArk
-                                    environments. Additionally, designed and
-                                    implemented AWS QuickSight dashboards,
-                                    providing comprehensive KPI insights and
-                                    monitoring capabilities, using Terraform as
-                                    IaC tool.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="Developed an automated onboarding process for all RDS instances within the organization, implementing role-based dynamic privilege segregation. This microservices architecture utilized AWS Lambda to retrieve RDS data from the catalog and registered instances via SQS queues, using Terraform as IaC tool."
-                                    data-pt="Desenvolvi um processo automatizado de integração para todas as instâncias RDS dentro da organização, implementando segregação dinâmica de privilégios baseada em funções. Esta arquitetura de microsserviços utilizou AWS Lambda para recuperar dados RDS do catálogo e registrar instâncias via filas SQS, usando Terraform como ferramenta de IaC."
-                                >
-                                    Developed an automated onboarding process
-                                    for all RDS instances within the
-                                    organization, implementing role-based
-                                    dynamic privilege segregation. This
-                                    microservices architecture utilized AWS
-                                    Lambda to retrieve RDS data from the catalog
-                                    and registered instances via SQS queues,
-                                    using Terraform as IaC tool.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="Currently developing Terraform modules for developers to integrate with HashiCorp Vault, following predefined guidelines."
-                                    data-pt="Atualmente desenvolvendo módulos Terraform para desenvolvedores integrarem com o HashiCorp Vault, seguindo diretrizes predefinidas."
-                                >
-                                    Currently developing Terraform modules for
-                                    developers to integrate with HashiCorp
-                                    Vault, following predefined guidelines.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="Led proof of concept (PoC) activities related to HashiCorp Vault."
-                                    data-pt="Liderou atividades de prova de conceito (PoC) relacionadas ao HashiCorp Vault."
-                                >
-                                    Led proof of concept (PoC) activities
-                                    related to HashiCorp Vault.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="Conducted troubleshooting and system maintenance around HashiCorp Vault."
-                                    data-pt="Realizou resolução de problemas e manutenção de sistemas relacionados ao HashiCorp Vault."
-                                >
-                                    Conducted troubleshooting and system
-                                    maintenance around HashiCorp Vault.
-                                </li>
-                            </ul>
-                            <button
-                                class="show-more-btn"
-                                data-en-show="Show More"
-                                data-en-less="Show Less"
-                                data-pt-show="Mostrar Mais"
-                                data-pt-less="Mostrar Menos"
-                            >
-                                Show More
-                            </button>
-                        </div>
-                        <div class="experience-card fade-in delay-5">
-                            <div class="experience-header">
-                                <h3
-                                    data-en="Security Engineer Intern"
-                                    data-pt="Estagiário de Engenheiro de Software"
-                                >
-                                    Security Engineer Intern
-                                </h3>
-                                <span
-                                    class="company"
-                                    data-en="Itaú Unibanco"
-                                    data-pt="Itaú Unibanco"
-                                    >Itaú Unibanco</span
-                                >
-                                <div class="experience-meta">
-                                    <span class="lang-en"
-                                        >São Paulo, Brazil</span
-                                    >
-                                    <span class="lang-pt"
-                                        >São Paulo, Brasil</span
-                                    >
-                                    <span class="lang-en"
-                                        >Jun 2022 - Sep 2023</span
-                                    >
-                                    <span class="lang-pt"
-                                        >Jun 2022 - Set 2023</span
-                                    >
-                                </div>
-                            </div>
-                            <div class="content">
-                                <p
-                                    data-en="Software engineer intern focused on developing and implementing security solutions using modern technologies and best practices."
-                                    data-pt="Estagiário de engenheiro de software focado em desenvolver e implementar soluções de segurança usando tecnologias modernas e melhores práticas."
-                                >
-                                    Software engineer intern focused on
-                                    developing and implementing security
-                                    solutions using modern technologies and best
-                                    practices.
-                                </p>
-                            </div>
-                            <ul class="experience-list">
-                                <li
-                                    class="experience-item"
-                                    data-en="Automated policy creation in HashiCorp Vault using Python and Terraform, improving efficiency and reducing manual errors."
-                                    data-pt="Automatizei a criação de políticas no HashiCorp Vault usando Python e Terraform, melhorando a eficiência e reduzindo erros manuais."
-                                >
-                                    Automated policy creation in HashiCorp Vault
-                                    using Python and Terraform, improving
-                                    efficiency and reducing manual errors.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="Contributed to the development of an API using FastAPI for managing HashiCorp Vault policies and authentication methods."
-                                    data-pt="Contribuí para o desenvolvimento de uma API usando FastAPI para gerenciar políticas e métodos de autenticação do HashiCorp Vault."
-                                >
-                                    Contributed to the development of an API
-                                    using FastAPI for managing HashiCorp Vault
-                                    policies and authentication methods.
-                                </li>
-                                <li
-                                    class="experience-item"
-                                    data-en="Participated in the implementation of security controls and monitoring solutions using AWS services."
-                                    data-pt="Participou da implementação de controles de segurança e soluções de monitoramento usando serviços AWS."
-                                >
-                                    Participated in the implementation of
-                                    security controls and monitoring solutions
-                                    using AWS services.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section
-                    id="skills"
-                    class="section skills slide-in-left delay-2"
-                >
-                    <h2
-                        data-en="Technical Skills"
-                        data-pt="Habilidades Técnicas"
-                    >
-                        Technical Skills
-                    </h2>
-                    <div class="content">
-                        <div class="skills-grid">
-                            <div class="skill-category fade-in delay-3">
-                                <h3
-                                    data-en="Cloud & Infrastructure"
-                                    data-pt="Nuvem & Infraestrutura"
-                                >
-                                    Cloud & Infrastructure
-                                </h3>
-                                <ul class="skill-list">
-                                    <li>
-                                        <a
-                                            href="https://aws.amazon.com"
-                                            target="_blank"
-                                            class="skill-link aws"
-                                            ><i class="fab fa-aws"></i> AWS</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://www.terraform.io"
-                                            target="_blank"
-                                            class="skill-link terraform"
-                                            ><img
-                                                src="/static/images/terraform.png"
-                                                alt="Terraform"
-                                                class="skill-icon"
-                                            />
-                                            Terraform</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://www.docker.com"
-                                            target="_blank"
-                                            class="skill-link docker"
-                                            ><i class="fab fa-docker"></i>
-                                            Docker</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://www.linux.org"
-                                            target="_blank"
-                                            class="skill-link linux"
-                                            ><i class="fab fa-linux"></i>
-                                            Linux</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://kubernetes.io"
-                                            target="_blank"
-                                            class="skill-link kubernetes"
-                                            ><img
-                                                src="/static/images/kubernetes-icon-color.svg"
-                                                alt="Kubernetes"
-                                                class="skill-icon"
-                                            />
-                                            Kubernetes</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="skill-category fade-in delay-4">
-                                <h3 data-en="Security" data-pt="Segurança">
-                                    Security
-                                </h3>
-                                <ul class="skill-list">
-                                    <li>
-                                        <a
-                                            href="https://www.hashicorp.com/products/vault"
-                                            target="_blank"
-                                            class="skill-link vault"
-                                            ><img
-                                                src="/static/images/vault.svg"
-                                                alt="Vault"
-                                                class="skill-icon"
-                                            />
-                                            HashiCorp Vault</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://aws.amazon.com/iam/"
-                                            target="_blank"
-                                            class="skill-link iam"
-                                            ><i class="fas fa-user-shield"></i>
-                                            IAM</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="skill-category fade-in delay-5">
-                                <h3 data-en="Programming" data-pt="Programação">
-                                    Programming
-                                </h3>
-                                <ul class="skill-list">
-                                    <li>
-                                        <a
-                                            href="https://golang.org"
-                                            target="_blank"
-                                            class="skill-link go"
-                                            ><i class="fa-brands fa-golang"></i>
-                                            Go</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://www.python.org"
-                                            target="_blank"
-                                            class="skill-link python"
-                                            ><i class="fab fa-python"></i>
-                                            Python</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://www.gnu.org/software/bash/"
-                                            target="_blank"
-                                            class="skill-link bash"
-                                            ><img
-                                                src="/static/images/bash.svg"
-                                                alt="Bash"
-                                                class="skill-icon"
-                                            />
-                                            Bash</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section
-                    id="projects"
-                    class="section projects slide-in-left delay-2"
-                >
-                    <h2 data-en="Projects" data-pt="Projetos">Projects</h2>
-                    <div class="projects-grid">
-                        <div class="project-card fade-in delay-3">
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <img
-                                        src="/static/images/terraform.png"
-                                        alt="Terraform"
-                                        class="skill-icon"
-                                    />
-                                </div>
-                                <h3>Terraform Associate Exam Study Guide</h3>
-                            </div>
-                            <div class="project-content">
-                                <p
-                                    data-en="A comprehensive study guide for the HashiCorp Certified: Terraform Associate exam. This repository contains detailed notes, key concepts, and best practices to help you prepare for the certification."
-                                    data-pt="Um guia de estudo abrangente para o exame HashiCorp Certified: Terraform Associate. Este repositório contém notas detalhadas, conceitos-chave e melhores práticas para ajudar você a se preparar para a certificação."
-                                >
-                                    A comprehensive study guide for the
-                                    HashiCorp Certified: Terraform Associate
-                                    exam. This repository contains detailed
-                                    notes, key concepts, and best practices to
-                                    help you prepare for the certification.
-                                </p>
-                                <div class="project-links">
-                                    <a
-                                        href="https://github.com/EnricoPDG/terraform-associate-exam"
-                                        target="_blank"
-                                        class="project-link"
-                                    >
-                                        <i class="fab fa-github"></i>
-                                        <span
-                                            data-en="View on GitHub"
-                                            data-pt="Ver no GitHub"
-                                            >View on GitHub</span
-                                        >
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card fade-in delay-4">
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <i class="fa-brands fa-golang"></i>
-                                </div>
-                                <h3>Music Organizer</h3>
-                            </div>
-                            <div class="project-content">
-                                <p
-                                    data-en="A native desktop application for macOS, Windows, and Linux that batch-downloads audio from YouTube, Spotify, and SoundCloud as .m4a files. Built with Go and Wails v2."
-                                    data-pt="Uma aplicação desktop nativa para macOS, Windows e Linux que faz download em lote de áudio do YouTube, Spotify e SoundCloud como arquivos .m4a. Construída com Go e Wails v2."
-                                >
-                                    A native desktop application for macOS,
-                                    Windows, and Linux that batch-downloads
-                                    audio from YouTube, Spotify, and SoundCloud
-                                    as .m4a files. Built with Go and Wails v2.
-                                </p>
-                                <div class="project-links">
-                                    <a
-                                        href="https://github.com/EnricoPDG/music-organizer"
-                                        target="_blank"
-                                        class="project-link"
-                                    >
-                                        <i class="fab fa-github"></i>
-                                        <span
-                                            data-en="View on GitHub"
-                                            data-pt="Ver no GitHub"
-                                            >View on GitHub</span
-                                        >
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section
-                    id="certificates"
-                    class="section certificates slide-in-right delay-2"
-                >
-                    <h2 data-en="Certificates" data-pt="Certificações">
-                        Certificates
-                    </h2>
-                    <div class="certificates-grid">
-                        <div class="certificate-card fade-in delay-3">
-                            <div class="certificate-header">
-                                <div class="cert-icon">
-                                    <i class="fab fa-aws"></i>
-                                </div>
-                                <h3>AWS Certified Cloud Practitioner</h3>
-                            </div>
-                            <div class="certificate-content">
-                                <p
-                                    data-en="Fundamental understanding of AWS Cloud concepts, services, and security."
-                                    data-pt="Compreensão fundamental dos conceitos, serviços e segurança da AWS Cloud."
-                                >
-                                    Fundamental understanding of AWS Cloud
-                                    concepts, services, and security.
-                                </p>
-                                <a
-                                    href="https://www.credly.com/earner/earned/badge/5356b9b6-9466-4f71-8069-77d0eb9c84d0"
-                                    target="_blank"
-                                    class="certificate-link"
-                                >
-                                    <span
-                                        data-en="View Certificate"
-                                        data-pt="Ver Certificado"
-                                        >View Certificate</span
-                                    >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path
-                                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                                        ></path>
-                                        <polyline
-                                            points="15 3 21 3 21 9"
-                                        ></polyline>
-                                        <line
-                                            x1="10"
-                                            y1="14"
-                                            x2="21"
-                                            y2="3"
-                                        ></line>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="certificate-card fade-in delay-4">
-                            <div class="certificate-header">
-                                <div class="cert-icon">
-                                    <img
-                                        src="/static/images/terraform.png"
-                                        alt="Terraform"
-                                        class="skill-icon"
-                                    />
-                                </div>
-                                <h3>Terraform Associate</h3>
-                            </div>
-                            <div class="certificate-content">
-                                <p
-                                    data-en="Proficiency in using Terraform for infrastructure as code and cloud resource management."
-                                    data-pt="Proficiência no uso do Terraform para infraestrutura como código e gerenciamento de recursos em nuvem."
-                                >
-                                    Proficiency in using Terraform for
-                                    infrastructure as code and cloud resource
-                                    management.
-                                </p>
-                                <a
-                                    href="https://www.credly.com/earner/earned/badge/c93bd87e-a180-42d1-bc7d-97390ec7d7dd"
-                                    target="_blank"
-                                    class="certificate-link"
-                                >
-                                    <span
-                                        data-en="View Certificate"
-                                        data-pt="Ver Certificado"
-                                        >View Certificate</span
-                                    >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path
-                                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                                        ></path>
-                                        <polyline
-                                            points="15 3 21 3 21 9"
-                                        ></polyline>
-                                        <line
-                                            x1="10"
-                                            y1="14"
-                                            x2="21"
-                                            y2="3"
-                                        ></line>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="contact" class="section contact">
-                    <h2 data-en="Contact" data-pt="Contato">Contact</h2>
-                    <div class="contact-content">
-                        <p
-                            data-en="Feel free to reach out to me for any questions or opportunities."
-                            data-pt="Fique à vontade para entrar em contato comigo para qualquer dúvida ou oportunidade."
-                        >
-                            Feel free to reach out to me for any questions or
-                            opportunities.
-                        </p>
-                        <div class="contact-links">
-                            <a
-                                href="mailto:ricopapsch@hotmail.com"
-                                class="contact-link"
-                            >
-                                <i class="fas fa-envelope"></i>
-                                <span>ricopapsch@hotmail.com</span>
-                            </a>
-                            <div class="social-links">
-                                <a
-                                    href="https://github.com/EnricoPDG"
-                                    target="_blank"
-                                    class="social-link"
-                                >
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a
-                                    href="https://www.linkedin.com/in/enrico-papsch-di-giacomo/"
-                                    target="_blank"
-                                    class="social-link"
-                                >
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
+    <header class="topbar">
+        <a href="#" class="logo" aria-label="Início">enrico<span class="logo-dot">.</span></a>
+        <nav class="nav" aria-label="Seções">
+            <a href="#experiencia"><span data-lang="pt">Experiência</span><span data-lang="en">Experience</span></a>
+            <a href="#projetos"><span data-lang="pt">Projetos</span><span data-lang="en">Projects</span></a>
+            <a href="#contato"><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></a>
+        </nav>
+        <div class="toggles">
+            <button class="toggle lang-toggle" type="button" aria-label="Mudar idioma / Change language">
+                <span data-lang="pt">EN</span><span data-lang="en">PT</span>
+            </button>
+            <button class="toggle theme-toggle" type="button" aria-label="Alternar tema">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
         </div>
+    </header>
 
-        <script src="/static/js/main.js"></script>
-    </body>
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero">
+            <img class="avatar" src="https://github.com/EnricoPDG.png?size=240" alt="Foto do Enrico" width="96" height="96" />
+            <h1>
+                <span data-lang="pt">Oi! Eu sou o Enrico 👋</span>
+                <span data-lang="en">Hi! I'm Enrico 👋</span>
+            </h1>
+            <p class="lede" data-lang="pt">
+                Engenheiro de software sênior em São Paulo. Na AsapTech, ajudo a construir do zero uma plataforma de
+                pagamentos orientada a eventos, com Go, RabbitMQ e Kubernetes. Antes disso, passei três anos no Itaú cuidando de segredos,
+                acessos e automação com HashiCorp Vault, Terraform e AWS.
+            </p>
+            <p class="lede" data-lang="en">
+                Senior software engineer in São Paulo. At AsapTech, I'm helping build an event-driven payments
+                platform from scratch, with Go, RabbitMQ and Kubernetes. Before that, I spent three years at Itaú working on
+                secrets, access and automation with HashiCorp Vault, Terraform and AWS.
+            </p>
+
+            <div class="term" role="img" aria-label="Enrico: status Running, engenheiro de software sênior, carreira desde junho de 2022">
+                <div class="term-cmd"><span class="term-prompt">$</span> <span class="term-typed" data-text="kubectl get pod enrico -n sao-paulo"></span><span class="term-caret" aria-hidden="true"></span></div>
+                <table class="term-out" aria-hidden="true">
+                    <tr><th>NAME</th><th>READY</th><th>STATUS</th><th>ROLE</th><th>AGE</th></tr>
+                    <tr><td>enrico</td><td>1/1</td><td class="running">Running</td><td>senior-software-engineer</td><td class="career-age">4y</td></tr>
+                </table>
+            </div>
+
+            <ul class="socials">
+                <li><a href="https://github.com/EnricoPDG" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/enrico-papsch-di-giacomo/" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+                <li><a href="mailto:ricopapsch@hotmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> E-mail</a></li>
+            </ul>
+        </section>
+
+        <!-- Experiência -->
+        <section id="experiencia" class="section">
+            <h2><span data-lang="pt">Minha experiência</span><span data-lang="en">My experience</span></h2>
+
+            <ol class="timeline">
+                <li class="job is-current">
+                    <div class="job-head">
+                        <h3>AsapTech</h3>
+                        <p class="job-meta">
+                            <span data-lang="pt">jun 2025 até hoje, remoto</span>
+                            <span data-lang="en">Jun 2025 to now, remote</span>
+                        </p>
+                    </div>
+                    <p data-lang="pt">Fintech construindo soluções de pagamento escaláveis. Entrei no time principal de engenharia para desenhar e implementar as bases de uma nova plataforma financeira.</p>
+                    <p data-lang="en">A fintech building scalable payment solutions. I joined the core engineering team to design and build the foundations of a new financial platform.</p>
+
+                    <div class="role">
+                        <p class="job-role"><span data-lang="pt">Engenheiro de Software Sênior</span><span data-lang="en">Senior Software Engineer</span></p>
+                        <p class="job-meta"><span data-lang="pt">abr 2026 até hoje</span><span data-lang="en">Apr 2026 to now</span></p>
+                        <ul class="bullets">
+                            <li data-lang="pt">Desenhei e implementei o Outbox Pattern em toda a organização de pagamentos, garantindo consistência transacional e entrega confiável de mensagens numa arquitetura orientada a eventos.</li>
+                            <li data-lang="en">Architected and rolled out the Outbox Pattern across the payments organization, guaranteeing transactional consistency and reliable message delivery in an event-driven architecture.</li>
+                            <li data-lang="pt">Liderei a integração regulatória com a CERC, mantendo os dados de recebíveis sincronizados e em conformidade.</li>
+                            <li data-lang="en">Led the regulatory integration with CERC, keeping payment receivables data in sync and compliant.</li>
+                            <li data-lang="pt">Mentoria de times multidisciplinares em design orientado a eventos, mensageria assíncrona e boas práticas de microsserviços.</li>
+                            <li data-lang="en">Mentored cross-functional teams on event-driven design, asynchronous messaging and microservices best practices.</li>
+                        </ul>
+                        <details class="more">
+                            <summary><span data-lang="pt">Ver mais</span><span data-lang="en">Show more</span></summary>
+                            <ul class="bullets">
+                                <li data-lang="pt">Criei frameworks de testes E2E automatizados, diminuindo o QA manual e acelerando as entregas dos times.</li>
+                                <li data-lang="en">Built automated end-to-end testing frameworks, cutting manual QA and speeding up delivery across teams.</li>
+                                <li data-lang="pt">Conduzi o processo de gestão de mudanças (GMUDs), reduzindo o risco dos deploys e garantindo releases sem downtime em produção.</li>
+                                <li data-lang="en">Ran the change management process (GMUDs), lowering deployment risk and keeping production releases at zero downtime.</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <div class="role">
+                        <p class="job-role"><span data-lang="pt">Engenheiro de Software</span><span data-lang="en">Software Engineer</span></p>
+                        <p class="job-meta"><span data-lang="pt">jun 2025 a abr 2026, Barueri, SP</span><span data-lang="en">Jun 2025 to Apr 2026, Barueri, SP</span></p>
+                        <ul class="bullets">
+                            <li data-lang="pt">Arquitetura e desenvolvimento de serviços backend em Go, RabbitMQ e Kubernetes, num sistema orientado a eventos feito para processar transações financeiras em grande escala.</li>
+                            <li data-lang="en">Architecture and development of backend services in Go, RabbitMQ and Kubernetes, in an event-driven system built to process financial transactions at scale.</li>
+                            <li data-lang="pt">Um dos primeiros engenheiros do time: trabalhei junto com produto e negócio para alinhar decisões técnicas com a estratégia, pensando em escala, compliance e no ecossistema de adquirência.</li>
+                            <li data-lang="en">One of the first engineers on the team: I worked closely with product and business to align technical decisions with strategy, with scale, compliance and the acquiring ecosystem in mind.</li>
+                        </ul>
+                    </div>
+                    <p class="tags">Go · RabbitMQ · Kubernetes · Outbox Pattern</p>
+                </li>
+
+                <li class="job">
+                    <div class="job-head">
+                        <h3>Itaú Unibanco</h3>
+                        <p class="job-role"><span data-lang="pt">Engenheiro de Software</span><span data-lang="en">Software Engineer</span></p>
+                        <p class="job-meta">
+                            <span data-lang="pt">set 2023 a jun 2025, São Paulo</span>
+                            <span data-lang="en">Sep 2023 to Jun 2025, São Paulo</span>
+                        </p>
+                    </div>
+                    <p data-lang="pt">Automação e segurança no dia a dia: Python, Go e Bash para automatizar infraestrutura e processos, em cima de AWS, microsserviços e Terraform.</p>
+                    <p data-lang="en">Automation and security day to day: Python, Go and Bash to automate infrastructure and processes, on top of AWS, microservices and Terraform.</p>
+                    <ul class="bullets">
+                        <li data-lang="pt">Implementei novos secret engines e métodos de autenticação no HashiCorp Vault, dando mais flexibilidade aos usuários e mais segurança à instituição.</li>
+                        <li data-lang="en">Implemented new secret engines and auth methods in HashiCorp Vault, giving users more flexibility and the bank more security.</li>
+                        <li data-lang="pt">Criei um onboarding automático de todas as instâncias RDS da organização, com segregação dinâmica de privilégios por papel. Lambda lendo o catálogo, filas SQS registrando as instâncias, tudo em Terraform.</li>
+                        <li data-lang="en">Built automatic onboarding for every RDS instance in the organization, with dynamic role-based privilege segregation. Lambda reading the catalog, SQS queues registering instances, all in Terraform.</li>
+                        <li data-lang="pt">Desenhei pipelines de dados com Glue, PySpark, EventBridge e Step Functions seguindo data mesh, alimentando dashboards de KPIs no QuickSight para os ambientes de Vault e CyberArk.</li>
+                        <li data-lang="en">Designed data pipelines with Glue, PySpark, EventBridge and Step Functions following data mesh, feeding QuickSight KPI dashboards for the Vault and CyberArk environments.</li>
+                    </ul>
+                    <details class="more">
+                        <summary><span data-lang="pt">Ver mais</span><span data-lang="en">Show more</span></summary>
+                        <ul class="bullets">
+                            <li data-lang="pt">Automatizei processos de suporte ao Vault com AWS Lambda e API Gateway, em Python e Terraform.</li>
+                            <li data-lang="en">Automated Vault support processes with AWS Lambda and API Gateway, in Python and Terraform.</li>
+                            <li data-lang="pt">Módulos Terraform para que os times de desenvolvimento integrem com o Vault seguindo as diretrizes da casa.</li>
+                            <li data-lang="en">Terraform modules so development teams can integrate with Vault following internal guidelines.</li>
+                            <li data-lang="pt">Liderei provas de conceito relacionadas ao Vault.</li>
+                            <li data-lang="en">Led proofs of concept around Vault.</li>
+                            <li data-lang="pt">Troubleshooting e manutenção dos sistemas em volta do Vault.</li>
+                            <li data-lang="en">Troubleshooting and maintenance of the systems around Vault.</li>
+                        </ul>
+                    </details>
+                    <p class="tags">HashiCorp Vault · Terraform · AWS · Python · Go</p>
+                </li>
+
+                <li class="job">
+                    <div class="job-head">
+                        <h3>Itaú Unibanco</h3>
+                        <p class="job-role"><span data-lang="pt">Estagiário de Engenharia de Segurança</span><span data-lang="en">Security Engineer Intern</span></p>
+                        <p class="job-meta">
+                            <span data-lang="pt">jun 2022 a set 2023, São Paulo</span>
+                            <span data-lang="en">Jun 2022 to Sep 2023, São Paulo</span>
+                        </p>
+                    </div>
+                    <ul class="bullets">
+                        <li data-lang="pt">Automatizei a criação de policies no Vault com Python e Terraform, ganhando tempo e reduzindo erro manual.</li>
+                        <li data-lang="en">Automated Vault policy creation with Python and Terraform, saving time and cutting manual errors.</li>
+                        <li data-lang="pt">Contribuí com uma API em FastAPI para gerenciar policies e métodos de autenticação do Vault.</li>
+                        <li data-lang="en">Contributed to a FastAPI service for managing Vault policies and auth methods.</li>
+                        <li data-lang="pt">Ajudei a implementar controles de segurança e monitoramento com serviços da AWS.</li>
+                        <li data-lang="en">Helped implement security controls and monitoring with AWS services.</li>
+                    </ul>
+                    <p class="tags">HashiCorp Vault · Python · FastAPI · AWS</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Projetos -->
+        <section id="projetos" class="section">
+            <h2><span data-lang="pt">Projetos pessoais</span><span data-lang="en">Side projects</span></h2>
+
+            <article class="project" data-repo="EnricoPDG/music-organizer">
+                <h3><a href="https://github.com/EnricoPDG/music-organizer" target="_blank" rel="noopener">Music Organizer</a></h3>
+                <p data-lang="pt">App desktop nativo para macOS, Windows e Linux que baixa áudio em lote do YouTube, Spotify e SoundCloud como .m4a. Feito em Go com Wails v2.</p>
+                <p data-lang="en">A native desktop app for macOS, Windows and Linux that batch-downloads audio from YouTube, Spotify and SoundCloud as .m4a files. Built in Go with Wails v2.</p>
+                <p class="repo-stats" hidden></p>
+            </article>
+
+            <article class="project" data-repo="EnricoPDG/terraform-associate-exam">
+                <h3><a href="https://github.com/EnricoPDG/terraform-associate-exam" target="_blank" rel="noopener"><span data-lang="pt">Terraform Associate, guia de estudos</span><span data-lang="en">Terraform Associate study guide</span></a></h3>
+                <p data-lang="pt">Minhas anotações para a certificação HashiCorp Terraform Associate: conceitos-chave, boas práticas e o que cai na prova.</p>
+                <p data-lang="en">My notes for the HashiCorp Terraform Associate certification: key concepts, best practices and what shows up on the exam.</p>
+                <p class="repo-stats" hidden></p>
+            </article>
+        </section>
+
+        <!-- Stack e certificações -->
+        <section id="stack" class="section">
+            <h2><span data-lang="pt">Com o que eu trabalho</span><span data-lang="en">What I work with</span></h2>
+            <dl class="stack">
+                <div><dt><span data-lang="pt">Linguagens</span><span data-lang="en">Languages</span></dt><dd>Go, Python, Bash</dd></div>
+                <div><dt><span data-lang="pt">Cloud e infra</span><span data-lang="en">Cloud & infra</span></dt><dd>AWS, Kubernetes, Docker, Terraform, Linux</dd></div>
+                <div><dt><span data-lang="pt">Segurança</span><span data-lang="en">Security</span></dt><dd>HashiCorp Vault, IAM</dd></div>
+                <div><dt><span data-lang="pt">Mensageria</span><span data-lang="en">Messaging</span></dt><dd>RabbitMQ, SQS, EventBridge</dd></div>
+            </dl>
+
+            <h3 class="sub"><span data-lang="pt">Certificações</span><span data-lang="en">Certifications</span></h3>
+            <ul class="certs">
+                <li>
+                    <a href="https://www.credly.com/earner/earned/share/ef75fa5b-c569-4dc0-84cf-9382a982c9d7" target="_blank" rel="noopener">Kubernetes and Cloud Native Associate (KCNA)</a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/earner/earned/badge/c93bd87e-a180-42d1-bc7d-97390ec7d7dd" target="_blank" rel="noopener">HashiCorp Certified: Terraform Associate</a>
+                </li>
+                <li>
+                    <a href="https://www.credly.com/earner/earned/badge/5356b9b6-9466-4f71-8069-77d0eb9c84d0" target="_blank" rel="noopener">AWS Certified Cloud Practitioner</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="section contact">
+            <h2><span data-lang="pt">Bora conversar?</span><span data-lang="en">Let's talk</span></h2>
+            <p data-lang="pt">Se quiser trocar uma ideia sobre plataforma, infra, Vault ou alguma oportunidade, me manda um e-mail.</p>
+            <p data-lang="en">If you want to chat about platforms, infra, Vault or an opportunity, send me an email.</p>
+            <a class="mail" href="mailto:ricopapsch@hotmail.com">ricopapsch@hotmail.com</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span class="year">2026</span> Enrico Papsch Di Giacomo</p>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
 </html>
